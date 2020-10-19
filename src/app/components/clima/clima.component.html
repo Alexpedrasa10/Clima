@@ -1,0 +1,34 @@
+<div>
+  <section>
+    <div class="container">
+      <div class="form">
+        <h1>App de clima</h1>
+        <h5>Introduzca el nombre de la ciudad y el código de su país para saber cuál es la temperatura
+          en dicho lugar.
+        </h5>
+        <form [formGroup]="form" (ngSubmit)="enviar(form.value)">
+          <div class="form-row">
+            <div class="col-md-6 col-sm-12">
+              <label>City name</label>
+              <input type="text" class="form-control" placeholder="Ej: Córdoba" 
+              formControlName="cityName" [(ngModel)]="location.cityName">
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label>Country code</label>
+              <input type="text" class="form-control" placeholder="Ej: AR" 
+              formControlName="countryCode" [(ngModel)]="location.countryCode">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger block p-2 mt-3">ver clima</button>
+        </form>
+      </div>
+      <ng-container *ngIf="clima">
+        <div class="clima">
+          <h1 class="title">{{clima.name}}</h1>
+          <h1 class="temp">{{clima.main.temp}}ºC <br><span>{{clima.weather[0].description }}</span></h1>
+          <h2 class="humedad"><fa-icon [icon]="faTint"></fa-icon> {{clima.main.humidity}} %</h2>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+</div>
