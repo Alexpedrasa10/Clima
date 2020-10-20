@@ -22,7 +22,7 @@
           <button type="submit" class="btn btn-danger block p-2 mt-3">ver clima</button>
         </form>
       </div>
-      <ng-container *ngIf="clima">
+      <ng-container *ngIf="mostrar">
         <div class="clima">
           <h1 class="title">{{clima.name}}</h1>
           <h1 class="temp">{{clima.main.temp}}ºC <br><span>{{clima.weather[0].description }}</span></h1>

@@ -15,6 +15,7 @@ export class ClimaComponent implements OnInit {
   form : FormGroup
   location = { cityName: '', countryCode: '' };
   clima = undefined
+  mostrar: Boolean = false
 
   constructor(
     private _builder : FormBuilder,
@@ -36,10 +37,14 @@ export class ClimaComponent implements OnInit {
         console.log(res),
         this.clima = res
       },
-      err => console.log(err)
+      err => {
+        console.log(err)
+        console.log('aca esta el drama')
+      }
     )
-    this.clima = true
-    this.location.cityName = '',
+    console.log(this.clima.name)
+    this.mostrar = true
+    this.location.cityName = ''
     this.location.countryCode = ''
   }
 
