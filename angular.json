@@ -126,6 +126,9 @@
               "devServerTarget": "clima:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }},
